@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import Helpers as Hp
 import unittest
-import AllureReports
+# import AllureReports
 
 
 # import HtmlTestRunner
@@ -52,7 +52,7 @@ class LogIn(unittest.TestCase):
         # Checking page title
         self.assertIn(Hp.Title, driver.title)
         print("Page has", driver.title + " as Page title")
-        elem(By.XPATH, "//*[@class='_1UDJF']").click()
+        elem(By.LINK_TEXT, "Log In").click()
         Hp.delay()
         try:
             wait.until(
@@ -86,7 +86,7 @@ class LogIn(unittest.TestCase):
 #     unittest.main(
 #         testRunner=HtmlTestRunner.HTMLTestRunner(output='./HtmlReports'))
 
-if __name__ == '__main__':
-    unittest.main(AllureReports)
+# if __name__ == '__main__':
+#    unittest.main(AllureReports)
 
 # py.test --alluredir=./AllureReports ./unittest4.py
